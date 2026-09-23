@@ -503,7 +503,7 @@ kubectl get hpa api-hpa -n prod -w     # TARGETS deve mostrar percentuais, nunca
 ### CI/CD
 
 O workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) roda em todo push/PR para
-`develop`, `hom` e `main`: executa a suíte de testes e publica o relatório. Somente em `main`
+`develop` e `main`: executa a suíte de testes e publica o relatório. Somente em `main`
 segue para o deploy — build e push da imagem para o Docker Hub
 (`timbeck97/tc-fiap:latest` e `:<run_number>`), autenticação na AWS (OIDC com fallback para chaves
 estáticas), `aws eks update-kubeconfig` e `kubectl rollout restart deployment/api -n prod`.
